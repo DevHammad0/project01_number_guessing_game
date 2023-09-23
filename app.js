@@ -12,10 +12,12 @@ async function playGame() {
                 name: "input",
                 type: "number",
                 message: chalk.green("Enter your guess number: "),
-                // validate: (input)=>{
-                //   if(isNaN){
-                //   }
-                // }
+                validate: (input) => {
+                    if (isNaN(input)) {
+                        return "Please enter a number";
+                    }
+                    return true;
+                }
             }
         ]);
         tries += 1;
